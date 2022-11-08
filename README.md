@@ -6,13 +6,13 @@ Pyndie è progettato per funzionare su Python 3.8.10.
 Per usarlo scarica ed estrai il file .zip  oppure clona il repository digitando
 
 ```bash
-git clone https://github.com/Eleirbag89/Pyndie.git
+git clone https://github.com/Eleirbag89/pyndie.git
 ```
 
 Aggiungi la cartella di Pyndie al `PATH` usando uno dei due comandi seguenti (su Linux)
 
-1. Temporaneo: Scrivi `export PATH=$PATH:/path/to/RusPython` nel terminale.
-2. Permanente: Aggiungi `export PATH=$PATH:/path/to/RusPython` alla fine del tuo file `~/.bashrc`.
+1. Temporaneo: Scrivi `export PATH=$PATH:/path/to/Pyndie` nel terminale.
+2. Permanente: Aggiungi `export PATH=$PATH:/path/to/Pyndie` alla fine del tuo file `~/.bashrc`.
 
 ## Utilizzo
 * Scrivi un file pyndie usando l'opportuna sintassi.
