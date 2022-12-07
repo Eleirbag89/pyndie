@@ -48,5 +48,18 @@ def main(argv=None):
 	if debug:
 		print("--- END ---")
 
+def webparse(lines):
+	s = " \n".join(lines)
+	s = s.replace("...", " ... ").replace("!", " ! ") + " "
+	utils.validate_program_web(s)
+	s = utils.caseInsensitivize(s)
+	
+	modu = parser.parse(s)
+	try:
+		exec(compile(modu, filename="<string>", mode="exec"))
+	except Exception as e:
+		print(str(e))
+
+    
 if __name__ == "__main__":
     main()

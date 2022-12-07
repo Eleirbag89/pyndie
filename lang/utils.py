@@ -35,6 +35,16 @@ def validate_program(s):
 	if not(any(city in matches for city in cities)):
 		print("Syntaxt error: a valid program MUST contains at least a city name")
 		exit()
+        
+def validate_program_web(s):
+	cities = set()
+	matches = findCity(s)
+	file = open('lang/city_list.txt')
+	while (line := file.readline().rstrip('\n')):
+		cities.add(line.lower().strip())
+	if not(any(city in matches for city in cities)):
+		print("Syntaxt error: a valid program MUST contains at least a city name")
+		exit()
 		
 def findCity(s):
 	matches = []
