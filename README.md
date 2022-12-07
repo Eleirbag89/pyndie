@@ -93,7 +93,8 @@ mi sussurrava ricorda la bella che è sparita!
 Questo codice definisce una funzione chiamata "bella" che calcola il fattoriale di 7 in maniera ricorsiva.   
 
 
-## Attivati
+## Contribuisci
 Sentiti libero di contribuire al progetto con commit, idee, suggerimenti.   
-Puoi creare fork e spinoff senza chiedere il permesso a nessuno (ok, però magari un piccolo link mettilo).   
+Apri delle issue per suggerire delle modifiche alla sintassi o proporre nuove funzionalità.    
+Le PR sono sempre ben accette, però cerca di mantenerle il più pulite possibile :-)    
 Puoi contribuire anche scrivendo del codice Pyndie e arricchendo la nostra galleria di esempi.
