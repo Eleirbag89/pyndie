@@ -19,6 +19,11 @@ Aggiungi la cartella di Pyndie al `PATH` usando uno dei due comandi seguenti (su
 * Esegui `pyndie /path/to/pyndie/file`
 * PROFIT!
 
+## Online IDE
+Visitando il sito [pyndie.grimstack.xy](https://pyndie.grimstack.xy) è possibile scrivere ed eseguire programmi direttamente dal proprio browser.    
+La funzionalità è sperimentale, aggiunta in fretta e furia in vista di un evento, pertanto al momento è mal documentata e probabilmente buggata 🦖
+
+
 ## Funzionalità
 Pyndie include diverse funzionalità perfette per ogni aspirante cantane indie:
 * Ogni programma deve contenere il nome di una città.
