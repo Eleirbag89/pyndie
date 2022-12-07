@@ -21,7 +21,10 @@ Aggiungi la cartella di Pyndie al `PATH` usando uno dei due comandi seguenti (su
 
 ## Online IDE
 Visitando il sito [pyndie.grimstack.xyz](https://pyndie.grimstack.xyz) è possibile scrivere ed eseguire programmi direttamente dal proprio browser.    
-La funzionalità è sperimentale, aggiunta in fretta e furia in vista di un evento, pertanto al momento è mal documentata e probabilmente buggata 🦖
+La funzionalità è sperimentale, aggiunta in fretta e furia in vista di un evento, pertanto al momento è mal documentata e probabilmente buggata 🦖    
+Per esegurlo in locale è necessario che il file index.html sia servito da un webserver. Python offre un webserver "out of the box".    
+Per eseguirlo è sufficiente aprire un terminale nella cartella contente l'eseguibile di Pyndie e lanciare
+`python -m http.server`
 
 
 ## Funzionalità
@@ -31,7 +34,7 @@ Pyndie include diverse funzionalità perfette per ogni aspirante cantane indie:
 * Il linguaggio è case insensitive per permettere la massima libertà.
 
 ## Grammatica
-La grammatica del linguaggio è un pò complessa, abbiamo distillato l'essenza dell'indie italiano. Ecco come puoi essere anche tu l'idolo degli hipster alternativi
+La grammatica nasce dopo anni di studio e ascolto, siamo riusciti a distillare l'essenza dell'indie italiano. Ecco come puoi essere anche tu l'idolo degli hipster alternativi
 
 Operatori Aritmetici:
 * `più` fa la somma
@@ -79,7 +82,8 @@ Input/Output
 * Stampare sullo schermo; `PRINT espressione`   
 PRINT può assumere i seguenti valori: `sussurra|gridavate|gridava|gridavi|gridavano|grido|grida|sussurravate|sussurravi|sussurrava|sussurra|sussurro`
 
-
+Terminare un'istruzione
+* Nel caso di ambiguita nella fine di un'istruzione è possibile usare il carattere `.`
 ## Esempi
 ```sai che sei bella come l'aria hey l'aria sembra abbacinata?
 dammi una abbindolata hey

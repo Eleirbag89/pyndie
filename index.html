@@ -135,15 +135,12 @@ class MyOutput:
         return len(self.buf)
 myOutput = MyOutput()
 sys.stdout = myOutput
-#sys.stderr = myOutput
-
 
 def click(ev):
-
     document['output'].value=""
     editor = window.ace.edit("editor")
     lines = editor.getValue().split('\n')
-    pyndie.webparse(lines)
+    pyndie.webparse(lines, document['debug'].checked)
 
 document["run"].bind("click", click)
 </script>
@@ -234,7 +231,9 @@ hey
 }
 </script>
 <header>
-    <h2>Pyndie Online Editor</h2> <div><button id="run">SING CODE</button></div>
+    <h2>Pyndie Online Editor</h2> <div><button id="run">SING CODE</button><input type="checkbox" id="debug">
+      <label for="debug"> Debug Mode</label><br>
+      </div>
 </header>
 <div class="wrapper">
 

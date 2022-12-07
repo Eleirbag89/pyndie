@@ -28,38 +28,30 @@ def main(argv=None):
 	
 	utils.validate_program(s)
 	s = utils.caseInsensitivize(s)
-	
+	execute(s, debug)
+
+def execute(s, debug):
 	modu = parser.parse(s)
-	
 	if debug:
 		print ("--- Source ---")
-		print(source)
+		print(s)
 		print("--- Compiled ---")
 		print(modu)
 		print("--- Execution ---")
 	try:
-		pass
 		exec(compile(modu, filename="<string>", mode="exec"))
 	except Exception as e:
-		if debug:
-			print(str(e))
-		else:
-			print("Tutto è andato bene, non preoccuparti")
+		print(str(e))
 	if debug:
 		print("--- END ---")
 
-def webparse(lines):
+def webparse(lines, debug=False):
 	s = " \n".join(lines)
 	s = s.replace("...", " ... ").replace("!", " ! ") + " "
 	utils.validate_program_web(s)
 	s = utils.caseInsensitivize(s)
+	execute(s, debug)
 	
-	modu = parser.parse(s)
-	try:
-		exec(compile(modu, filename="<string>", mode="exec"))
-	except Exception as e:
-		print(str(e))
-
     
 if __name__ == "__main__":
     main()
