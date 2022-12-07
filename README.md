@@ -20,7 +20,7 @@ Aggiungi la cartella di Pyndie al `PATH` usando uno dei due comandi seguenti (su
 * PROFIT!
 
 ## Online IDE
-Visitando il sito [pyndie.grimstack.xy](https://pyndie.grimstack.xy) è possibile scrivere ed eseguire programmi direttamente dal proprio browser.    
+Visitando il sito [pyndie.grimstack.xyz](https://pyndie.grimstack.xyz) è possibile scrivere ed eseguire programmi direttamente dal proprio browser.    
 La funzionalità è sperimentale, aggiunta in fretta e furia in vista di un evento, pertanto al momento è mal documentata e probabilmente buggata 🦖
 
 
