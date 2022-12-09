@@ -9,6 +9,11 @@
         src="https://cdn.jsdelivr.net/npm/brython@3.11.0/brython_stdlib.js">
     </script>
 	<script type = "text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.13.1/ace.min.js"></script>
+
+  <!-- Include the Clippy.js stylesheet, assuming locally -->
+  <link rel="stylesheet" type="text/css" href="clippy/clippy.css" media="all">
+
+
 </head>
 <body onload="brython(1)">
 <style>
@@ -138,6 +143,8 @@ sys.stdout = myOutput
 
 def click(ev):
     document['output'].value=""
+    window.agent.stop();
+    window.agent.play("Thinking")
     editor = window.ace.edit("editor")
     lines = editor.getValue().split('\n')
     pyndie.webparse(lines, document['debug'].checked)
@@ -147,16 +154,14 @@ document["run"].bind("click", click)
 
 <script>
 function loadFattoriale() {
-	var editor = window.ace.edit("editor");
-	editor.setValue(`sai che sei bella come l'aria hey l'aria sembra abbacinata?
+  loadCodeSample(`sai che sei bella come l'aria hey l'aria sembra abbacinata?
 dammi una abbindolata hey
 dammi l'aria per ricordare bella che è l'aria meno Albuquerque! oh
 mi sussurrava ricorda la bella che è sparita!
 `);
 }
 function loadFibonacci() {
-	var editor = window.ace.edit("editor");
-	editor.setValue(`sai che sono sparito come un mago hey 
+  loadCodeSample(`sai che sono sparito come un mago hey 
 un mago minore un fattucchiere ?
 dammi il mago hey
 dammi il ricordo sparito che è un mago meno obbligatorio! 
@@ -165,8 +170,7 @@ mi sussurravi il ricordo sparito che è Riccione!
 `);
 }
 function loadFizzBuzz() {
-	var editor = window.ace.edit("editor");
-	editor.setValue(`sai che sei leggerezza come l'estate hey io sono l'estate.
+  loadCodeSample(`sai che sei leggerezza come l'estate hey io sono l'estate.
 l'estate resta qui sembra jazzistica e io resto bimbo sembro nanocefalo  ?
 grida "fizzbuzz" altrimenti io resto qui sembro ubbidiente ?
 grida "fizz" altrimenti l'estate resta fioca sembra zampillare ?
@@ -182,8 +186,7 @@ ricorda  la leggerezza che è la tachipirina 15!
 `);
 }
 function load99Bottles() {
-	var editor = window.ace.edit("editor");
-	editor.setValue(`sai che sei ubriaca come una scimmia hey
+  loadCodeSample(`sai che sei ubriaca come una scimmia hey
 forte è " bottigli" maliziosa è " di birra"
 iperattiva è " sul muro"
 amore è "e"
@@ -229,6 +232,17 @@ la ragazza è una ragazza meno intossicata
 hey
 `);
 }
+
+function loadCodeSample(code) {
+  playSearch();
+	var editor = window.ace.edit("editor");
+	editor.setValue(code);
+}
+
+function playSearch() {
+  window.agent.stop();
+  window.agent.play("Searching");
+}
 </script>
 <header>
     <h2>Pyndie Online Editor</h2> <div><button id="run">SING CODE</button><input type="checkbox" id="debug">
@@ -255,8 +269,54 @@ hey
 
 <script>
     var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/javascript");
+  	editor.setValue("");
 </script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  <!-- Clippy.js, assuming locally -->
+  <script src="clippy/clippy.min.js"></script>
+  <script type="text/javascript">
+
+    
+    const talk_f = function talk() {
+      var talks = [
+        "Did you know ? If you take two tachipirina 500 it becomes tachipirina 1000",
+        "Did you know ? Under the sun of Riccione I almost regret it",
+        "Did you know ? You are beautiful even when there is no music",
+        "Did you know ? There is too much light in the room",
+        "Did you know ? A few story's cocktails are not enough to be Jack Black while staring at Gwyneth Paltrow",
+        "Did you know ? I've been trying to understand September for a lifetime but it's not for me",
+        "Did you know ? I'm so indie that I like to go dancing",
+        "Did you know ? Desires help you get laid",
+        "Did you know ? You can put on some light music because I want nothing",
+        "Did you know ? In your heart you only have photos of landscapes and there is no place for your photos with me",
+        "Did you know ? On your legs I read the meaning of life",
+        "Did you know ? Pesaro is an intelligent woman",
+        "Did you know ? I went out tonight but I haven't read the horoscope",
+        "Did you know ? This is not Rio de Janeiro but the weather is fantastic",
+        "Did you know ? They always screw us",
+        "Did you know ? We'll be shaking like the California, my love, in our separate rooms",
+        "Did you know ? I seek you on weekends, in full moons, in every car that passes in via Togliatti",
+        "Did you know ? My life without you is not so different",
+        "Did you know ? I sing it not to cry and I won't",
+        "Did you know ? Art is thought that comes out of the body more or less like dung",
+        "Did you know ? Tell your man everything and he will please you twice as much",
+        "Did you know ? Records are no longer sold, there is Spotify",
+      ];
+      var index = Math.floor((Math.random()*talks.length));
+      window.agent.speak(talks[index]);
+      window.agent.play("Explain");
+    }
+    clippy.load("Clippy", function (agent) {
+      window.agent = agent;
+
+      agent.show();
+      window.agent.play("Greeting");
+      //agent.moveTo(100, 100);
+    
+      setInterval(talk_f, 12000);
+    });
+      </script>
 </body>
 </html>
