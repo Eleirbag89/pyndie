@@ -266,7 +266,7 @@ def t_DQUOTE(t):
 	return t
 
 def t_DRUG(t):
-	r'(paracetamolo|tachipirina|aulin|oki)\ +'
+	r'(paracetamolo|tachipirina|aulin|oki|brioschi)\ +'
 	if lex.dquotes:
 		t.type = 'NAME'
 	return t
